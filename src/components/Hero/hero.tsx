@@ -7,7 +7,7 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.heroText}>
         <h1>
-        J'ai toujours aimé les casquettes — alors j'en ai collectionné quelques-unes : Directeur Artistique, Motion Designer, Développeur Créatif, je travaille avec des idées, des images, du mouvement et un peu de code. Parfois je construis. Parfois j'anime. Souvent je relie.
+        J&apos;ai toujours aimé les casquettes — alors j&apos;en ai collectionné quelques-unes : Directeur Artistique, Motion Designer, Développeur Créatif, je travaille avec des idées, des images, du mouvement et un peu de code. Parfois je construis. Parfois j&apos;anime. Souvent je relie.
         </h1>
       </div>
       <div className={styles.imageWrapper}>
