@@ -4,10 +4,6 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(245, 241, 229, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(7, 7, 7, 0.1);
-  transition: all 0.3s ease;
 }
 
 .container {

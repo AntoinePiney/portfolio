@@ -1,32 +1,50 @@
 import { Metadata } from "next";
 
 export const seoData: Metadata = {
-  title: "Portfolio - Your content delivery partner for large scale applications",
-  description: "A platform integrating Aceternity with Strapi for seamless content management.",
-  keywords: "content, delivery, web, hosting",
+  title: "Antoine Piney — Directeur Artistique",
+  description:
+    "Antoine Piney — Direction artistique, développeur créatif, motion designer. Entre esthétique, 3D et interactivité, des projets créatifs à la croisée du design et du développement.",
+  keywords:
+    "portfolio, art director, motion design, design immersif, web créatif, 3D, GSAP, Three.js, Next.js, Awwwards",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
-    title: "LaunchPad - Your content delivery partner for large scale applications",
-    url: "https://ui.aceternity.com",
-    description: "A platform integrating Aceternity with Strapi for seamless content management.",
-    locale: "en_EN",
+    title: "Antoine Piney — Directeur Artistique",
+    url: "https://antoinepiney.fr",
+    description:
+      "Découvrez l’univers de [Ton Nom] : direction artistique, motion design, 3D et expériences web interactives. Un portfolio qui mélange créativité et technique.",
+    locale: "fr_FR",
     images: [
       {
         width: 1200,
         height: 630,
-        url: "https://ui.aceternity.com/banner.png",
+        url: "https://antoinepiney.fr/og-image.png",
       },
     ],
-    siteName: "launchpad",
+    siteName: "Portfolio — [Ton Nom]",
   },
   twitter: {
     card: "summary_large_image",
-    site: "ui.aceternity.com",
-    creator: "@mannupaaji",
+    site: "antoinepiney.fr",
+    creator: "@[ton-handle-twitter-ou-instagram]",
+    title: "Portfolio — Art Direction & Motion Design",
+    description:
+      "Portfolio de [Ton Nom] : direction artistique, motion design et web immersif.",
+    images: [
+      {
+        url: "https://[ton-domaine].com/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
-  authors: [{ name: "LaunchPad Team" }],
-  creator: "LaunchPad",
-  publisher: "LaunchPad",
+  authors: [{ name: "[Ton Nom]" }],
+  creator: "[Ton Nom]",
+  publisher: "[Ton Nom]",
   robots: {
     index: true,
     follow: true,
@@ -87,22 +105,4 @@ export function generateMetadata({
   };
 }
 
-/**
- * Example usage for dynamic pages:
- * 
- * // In a dynamic page like [slug]/page.tsx
- * import { generateMetadata } from '@/lib/seo'
- * 
- * export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
- *   const article = await getArticle(params.slug)
- *   
- *   return generateMetadata({
- *     title: article.title,
- *     description: article.description,
- *     image: article.image?.url,
- *     url: `https://yoursite.com/articles/${params.slug}`,
- *   })
- * }
- */
-
-export default seoData; 
+export default seoData;

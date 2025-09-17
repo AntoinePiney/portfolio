@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import seoData from "@/lib/seo";
 import ClientLayout from "./ClientLayout";
 import Header from "@/components/HeaderMain/header";
+import DynamicFavicon from "@/components/DynamicFavicon";
 
 export const metadata: Metadata = seoData;
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
+        <DynamicFavicon />
         <Header />
         <ClientLayout>{children}</ClientLayout>
       </body>
