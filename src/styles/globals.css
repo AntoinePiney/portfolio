@@ -25,13 +25,13 @@ li {
 
 
 ::-moz-selection { /* Code for Firefox */
-  color: rgb(255, 230, 42);
-  background: rgb(21, 0, 255);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 ::selection {
-  color: rgb(255, 230, 42);
-  background: rgb(21, 0, 255);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 html, body {

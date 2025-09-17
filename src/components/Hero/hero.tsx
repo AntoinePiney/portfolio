@@ -1,17 +1,64 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import styles from './hero.module.css';
 import Image from 'next/image';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 const Hero = () => {
+  // Liste des couleurs disponibles (sauf --black)
+  const availableColors = [
+    'var(--yellow)',
+    'var(--orange)',
+    'var(--mauve)',
+    'var(--bwhite)',
+    'var(--beige)',
+    'var(--blue)',
+    'var(--green)',
+    'var(--rose)'
+  ];
+
+  const [selectedColor, setSelectedColor] = useState('var(--rose)'); // couleur par défaut
+
+  useEffect(() => {
+    // Récupérer la dernière couleur utilisée
+    const lastColor = localStorage.getItem('lastHeroColor');
+    
+    // Filtrer les couleurs pour exclure la dernière utilisée
+    const availableColorsFiltered = lastColor 
+      ? availableColors.filter(color => color !== lastColor)
+      : availableColors;
+    
+    // Sélectionner une couleur aléatoire parmi les couleurs disponibles
+    const randomColor = availableColorsFiltered[Math.floor(Math.random() * availableColorsFiltered.length)];
+    
+    // Sauvegarder la nouvelle couleur et l'appliquer
+    localStorage.setItem('lastHeroColor', randomColor);
+    setSelectedColor(randomColor);
+  }, []);
+
   return (
-    <section className={styles.hero}>
+    <section 
+      className={styles.hero}
+      style={{ backgroundColor: selectedColor }}
+    >
+      <SocialLinks />
       <div className={styles.heroText}>
         <h1>
         J&apos;ai toujours aimé les casquettes — alors j&apos;en ai collectionné quelques-unes : Directeur Artistique, Motion Designer, Développeur Créatif, je travaille avec des idées, des images, du mouvement et un peu de code. Parfois je construis. Parfois j&apos;anime. Souvent je relie.
         </h1>
       </div>
       <div className={styles.imageWrapper}>
-        <Image className={styles.heroImage} src="/images/profile.jpg" alt="Hero" width={1000} height={1000} />
+        <Image 
+          className={styles.heroImage} 
+          src="/images/profile.jpg" 
+          alt="Hero" 
+          width={160} 
+          height={160}
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
       </div>
       <div className={styles.logoSvg}>
         <svg xmlns="http://www.w3.org/2000/svg" width="1392" height="209" viewBox="0 0 1392 209" fill="none">
