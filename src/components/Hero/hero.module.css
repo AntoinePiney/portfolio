@@ -13,8 +13,8 @@
 .heroText {
   max-width: 40%;
   margin-bottom: auto;
+  z-index: 2;
 }
-
 
 .imageWrapper {
   position: absolute;
@@ -46,5 +46,118 @@
 .logoSvg svg {
   width: 100%;
   height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    padding: var(--spacing-md);
+  }
+  
+  .heroText {
+    max-width: 50%;
+  }
+  
+  .imageWrapper {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-sm);
+    height: 100vh;
+    position: relative;
+  }
+  
+  .heroText {
+    max-width: none;
+    margin-bottom: 0;
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: 3;
+  }
+  
+  .imageWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6rem;
+    z-index: 2;
+  }
+  
+  .logoSvg {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0 var(--spacing-sm);
+    z-index: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .heroText {
+    max-width: none;
+    margin-bottom: 0;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 3;
+  }
+  
+  .heroText h1 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  
+  .imageWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    z-index: 2;
+  }
+  
+  .logoSvg {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0 1rem;
+    z-index: 3;
+  }
+  
+  .logoSvg svg {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .heroText h1 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .imageWrapper {
+    width: 4rem;
+  }
+  
+  .logoSvg svg {
+    max-height: 100px;
+  }
 }
 
