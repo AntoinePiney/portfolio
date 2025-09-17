@@ -7,9 +7,9 @@ export const seoData: Metadata = {
   keywords:
     "portfolio, art director, motion design, design immersif, web créatif, 3D, GSAP, Three.js, Next.js, Awwwards",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/api/favicon",
+    shortcut: "/api/favicon",
+    apple: "/api/favicon",
   },
   openGraph: {
     type: "website",
