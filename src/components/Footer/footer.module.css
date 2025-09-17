@@ -1,0 +1,31 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.left {
+  color: var(--black);
+}
+
+.right {
+  color: var(--black);
+}
+
+.time {
+  font-size: 0.875rem;
+}
+
+.copyright {
+  font-size: 0.875rem;
+}

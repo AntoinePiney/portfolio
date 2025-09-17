@@ -1,0 +1,52 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  background: var(--beige);
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-lg);
+}
+
+.heroText {
+padding-top: 4rem;
+  max-width: 40%;
+  margin-bottom: auto;
+}
+
+
+.imageWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  height: auto;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logoSvg {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 0;
+  right: 0;
+  width: 100vw;
+  padding: 0 24px;
+  z-index: 3;
+}
+
+.logoSvg svg {
+  width: 100%;
+  height: auto;
+}
+

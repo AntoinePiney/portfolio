@@ -1,0 +1,133 @@
+/* ===== RESET CSS ===== */
+
+/* 1. Box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margins/paddings */
+html, body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 3. Remove default list styles */
+ul[role='list'],
+ol[role='list'],
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: rgb(255, 230, 42);
+  background: rgb(21, 0, 255);
+}
+
+::selection {
+  color: rgb(255, 230, 42);
+  background: rgb(21, 0, 255);
+}
+
+html, body {
+  height: 100%;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+  position: relative;
+  height: 100%;
+}
+
+/* 8. Hide native scrollbar while keeping scroll functionality */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* WebKit (Chrome, Safari) */
+}
+
+
+/* 5. Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Inherit fonts for form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 7. Remove animations/transitions for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* globals.css - CSS minimal requis selon la doc officielle */
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Optimisation recommandée pour les navigateurs modernes */
+@supports (transition-behavior: allow-discrete) {
+  .lenis.lenis-smooth {
+    transition-behavior: allow-discrete;
+  }
+}
+
+/* Pour désactiver le smooth scroll sur des éléments spécifiques */
+.modal-overlay,
+.dropdown-menu {
+  overscroll-behavior: contain;
+}
+
+/* Respect des préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+}
